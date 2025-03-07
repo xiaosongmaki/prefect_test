@@ -1,0 +1,13 @@
+# 部署配置文件
+name: 示例项目
+
+entrypoint: example_flow.py:example_flow
+
+deployments:
+  - name: 示例流程部署
+    work_pool:
+      name: my_mac
+    schedule:
+      cron: "*/5 * * * *"  # 每5分钟运行一次
+    parameters:
+      wait_seconds: 10 

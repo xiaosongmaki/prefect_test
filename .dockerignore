@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# Docker
+Dockerfile
+.dockerignore
+
+# 其他
+.DS_Store
+.idea/
+.vscode/ 

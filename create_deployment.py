@@ -18,3 +18,18 @@ if __name__ == "__main__":
         work_pool_name="my_mac",
         cron="*/1 * * * *",  # Run every 1 minute
     )
+    flow.from_source(
+        source=SOURCE_REPO,
+        entrypoint="repo_analysis.py:analyze_repo_health", # Specific flow to run
+    ).deploy(
+        name="my-third-deployment",
+        parameters={
+            "github_repos": [
+                "PrefectHQ/prefect",
+                "pydantic/pydantic",
+                "huggingface/transformers"
+            ]
+        },
+        work_pool_name="my_mac",
+        cron="*/1 * * * *",  # Run every 1 minute
+    )
